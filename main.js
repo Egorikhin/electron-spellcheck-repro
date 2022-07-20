@@ -25,6 +25,8 @@ app.on("ready", async () => {
   mainWindow.webContents.on("context-menu", (event, params) => {
     event.preventDefault();
     const { misspelledWord, dictionarySuggestions } = params;
+    console.warn(`${misspelledWord} ->`, dictionarySuggestions);
+
     const isMisspelled = misspelledWord !== "";
 
     if (isMisspelled) {
